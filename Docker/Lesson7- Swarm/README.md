@@ -428,7 +428,7 @@ sysadmin@mgr1:~$
 
 - The command mostly common
 - The `--network` flag assigned the service to overlay-network create named `uber-net`
-- The `-p` port forwarding/published to Docker Host even the *worker* doesn't have the replica - *ingress* mode
+- The `-p` port forwarding/published to Docker Host when the *worker* doesn't have the replica it will redirect to the node that contain the replica - *ingress* mode
 - Alternatively is *host* mode which on expose the port when the service on swarm nodes running replicas
 
 ### Staged update
