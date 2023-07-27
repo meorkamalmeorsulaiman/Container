@@ -1,0 +1,9 @@
+- name: Test Playbook
+  hosts: all
+  become: True
+  tasks:
+    - name: Install TMUX
+      apt:
+        name: tmux
+        state: present
+        update_cache: yes
