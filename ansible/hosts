@@ -1,0 +1,9 @@
+[manager]
+mgr1.rumah.lan
+mgr2.rumah.lan
+mgr3.rumah.lan
+
+[worker]
+wrk1.rumah.lan
+wrk2.rumah.lan
+wrk3.rumah.lan
