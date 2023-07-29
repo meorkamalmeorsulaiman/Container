@@ -1,0 +1,45 @@
+networks:
+  infra-net:
+    driver: overlay
+    driver_opts:
+      encrypted: 'yes'
+
+services:
+  prometheus:
+    image: prom/prometheus
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 2
+        delay: 10s
+        failure_action: rollback
+      placement:
+        constraints:
+          - 'node.role == worker'
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    networks:
+      - infra-net
+    ports:
+      - published: 9090
+        target: 9090
+    volumes:
+      - /shared_docker/prometheus:/etc/prometheus
+
+  grafana:
+    image: grafana/grafana
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - 'node.role == worker'
+    networks:
+      - infra-net
+    ports:
+      - published: 3000
+        target: 3000
+    volumes:
+      - /shared_docker/grafana:/var/lib/grafana
