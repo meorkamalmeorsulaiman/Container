@@ -1,9 +1,9 @@
 [manager]
-mgr1.rumah.lan
-mgr2.rumah.lan
-mgr3.rumah.lan
+mgr1.dck.rumah.lan
+mgr2.dck.rumah.lan
+mgr3.dck.rumah.lan
 
 [worker]
-wrk1.rumah.lan
-wrk2.rumah.lan
-wrk3.rumah.lan
+wrk1.dck.rumah.lan
+wrk2.dck.rumah.lan
+wrk3.dck.rumah.lan
